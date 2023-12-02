@@ -1,7 +1,8 @@
 const User = require("../models/user.model");
 const bcrypt = require("bcrypt");
+const { errorHandler } = require("../utils/error");
 
-exports.signup = async (req, res) => {
+exports.signup = async (req, res,next) => {
   try {
     const { username, email, password } = req.body;
     if (!username || !email || !password) {
@@ -18,7 +19,6 @@ exports.signup = async (req, res) => {
       message: "User registered successfully",
     });
   } catch (error) {
-    console.log(error);
-    return res.status(500).json(error.message);
+    next(error);
   }
 };
