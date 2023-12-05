@@ -5,11 +5,13 @@ const database = require('./config/database');
 const userRouter = require('./routes/user.route');
 const dotenv = require("dotenv");
 const authRouter = require('./routes/auth.route.js');
+const cookieParser=require('cookie-parser');
 
 dotenv.config();
 const PORT = process.env.PORT || 4000;
 database.dbconnect();
 app.use(express.json());
+app.use(cookieParser());
 
 require('dotenv').config();
 
