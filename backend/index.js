@@ -6,6 +6,7 @@ const userRouter = require('./routes/user.route');
 const dotenv = require("dotenv");
 const authRouter = require('./routes/auth.route.js');
 const cookieParser=require('cookie-parser');
+const listingRouter = require('./routes/listing.route');
 
 dotenv.config();
 const PORT = process.env.PORT || 4000;
@@ -25,6 +26,7 @@ app.listen(5050,()=>{
 
 app.use('/api/v1/user',userRouter);
 app.use('/api/v1/auth',authRouter);
+app.use('/api/v1/listing',listingRouter);
 
 
 app.use((err,req,res,next)=>{
