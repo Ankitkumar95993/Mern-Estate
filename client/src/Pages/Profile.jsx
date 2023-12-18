@@ -22,6 +22,7 @@ import {
   signOutUserSuccess,
 } from "../redux/user/userSlice";
 import { useDispatch } from "react-redux";
+import CreateListing from "./createListing";
 
 export default function Profile() {
   const fileRef = useRef(null);
@@ -32,6 +33,7 @@ export default function Profile() {
   const [formData, setFormData] = useState({});
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const dispatch = useDispatch();
+  const [showMyCreateListing,setShowMyCreateListing] = useState(false);
 
   //firebase storage()
   //    allow read;
@@ -191,8 +193,9 @@ export default function Profile() {
         >
           {loading ? "Loading..." : "Update"}
         </button>
-        <Link to={"/create-listing"} className="bg-green-700 text-center text-white p-3 uppercase rounded-lg hover:opacity-95 cursor-pointer"
-        >Create Listing </Link>
+        <Link to={"/create-listing"}  className="bg-green-700 text-center text-white p-3 uppercase rounded-lg
+         hover:opacity-95 cursor-pointer">Create Listing </Link>
+       
       </form>
       <div className="flex justify-between mt-5 text-red-700 font-semibold ">
         <span onClick={handleDeleteUser} className="cursor-pointer">Delete Account</span>
