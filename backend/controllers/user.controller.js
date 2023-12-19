@@ -1,6 +1,7 @@
 const { errorHandler } = require("../utils/error");
 const bcrypt = require("bcrypt");
 const User = require("../models/user.model");
+const Listing = require("../models/listing.model");
 
 exports.test = (req, res) => {
   res.json({
@@ -48,5 +49,19 @@ exports.deleteUser = async (req, res, next) => {
     res.status(200).json("user has been deleted");
   } catch (error) {
     next(error);
+  }
+};
+
+exports.getUserListing = async (res, req, next) => {
+  console.log(req.user.id);
+  if (req.user.id === req.params.id) {
+    try {
+      const listings = await Listing.find({ userRef: req.params.id });
+      res.status(200).json(listings);
+    } catch (error) {
+      next(error);
+    }
+  } else {
+    return next(errorHandler(401, "you can only view your listing!"));
   }
 };
