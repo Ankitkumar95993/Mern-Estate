@@ -52,8 +52,8 @@ exports.deleteUser = async (req, res, next) => {
   }
 };
 
-exports.getUserListing = async (res, req, next) => {
-  console.log(req.user.id);
+exports.getUserListings = async (req, res, next) => {
+  // console.log('req.user in getUserListings:', req.user);
   if (req.user.id === req.params.id) {
     try {
       const listings = await Listing.find({ userRef: req.params.id });
@@ -61,7 +61,8 @@ exports.getUserListing = async (res, req, next) => {
     } catch (error) {
       next(error);
     }
-  } else {
+  }
+   else {
     return next(errorHandler(401, "you can only view your listing!"));
   }
 };

@@ -9,15 +9,12 @@ const cookieParser=require('cookie-parser');
 const listingRouter = require('./routes/listing.route');
 
 dotenv.config();
-const PORT = process.env.PORT || 4000;
+// const PORT = process.env.PORT || 4000;
 database.dbconnect();
 app.use(express.json());
 app.use(cookieParser());
 
 require('dotenv').config();
-
-
-
 
 app.listen(5050,()=>{
     console.log('server is running at port no 5050');
