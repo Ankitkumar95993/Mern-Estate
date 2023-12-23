@@ -61,7 +61,7 @@ exports.getListing = async (req, res, next) => {
   }
 };
 
-exports.getListings = async(req, res, next) => {
+exports.getListings = async(req,res,next) => {
   try {
     const limit = parseInt(req.query.limit) || 9;
     const startIndex = parseInt(req.query.startIndex) || 0;
@@ -91,7 +91,7 @@ exports.getListings = async(req, res, next) => {
     const order = req.query.order || 'desc';
 
     const listings = await Listing.find({
-      name: { $regex:searchTerm,$option:'i'},
+      name: { $regex:searchTerm,$options:'i'},
       offer,
       furnished,
       parking,
