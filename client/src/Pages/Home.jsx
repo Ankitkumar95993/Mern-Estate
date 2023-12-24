@@ -13,7 +13,7 @@ export default function Home() {
   const [rentListings, setRentListings] = useState([]);
   const [saleListings, setSaleListings] = useState([]);
   SwiperCore.use([Navigation]);
-  console.log(saleListings);
+
 
   useEffect(() => {
     const fetchOfferListings = async () => {
@@ -41,7 +41,7 @@ export default function Home() {
     const fetchSaleListings = async () => {
       try {
         const res = await fetch("api/v1/listing/get?type=sale&limit=4");
-        const data = res.json();
+        const data = await res.json();
         setSaleListings(data);
       } catch (error) {
         console.log(error);
@@ -140,17 +140,18 @@ export default function Home() {
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-1">
               <h2 className="text-3xl text-slate-700 font-semibold">
-                Recent places for sale
+                Recent places for rent
               </h2>
               <Link
                 to={"/search?type=sale"}
-                className="text-blue-700 hover:underline">
-                Show more places for sale
+                className="text-blue-700 hover:underline"
+              >
+                Show more places for rent
               </Link>
             </div>
             <div className="flex flex-wrap gap-4">
               {saleListings.map((listing) => (
-                <saleItem listing={listing} key={listing._id} />
+                <ListingItem listing={listing} key={listing._id} />
               ))}
             </div>
           </div>
