@@ -8,7 +8,7 @@ const dotenv = require("dotenv");
 const authRouter = require('./routes/auth.route.js');
 const cookieParser=require('cookie-parser');
 const listingRouter = require('./routes/listing.route');
-// const path = require('path');
+const path = require('path');
 
 dotenv.config();
 // const PORT = process.env.PORT || 4000;
