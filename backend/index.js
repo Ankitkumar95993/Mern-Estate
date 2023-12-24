@@ -1,5 +1,8 @@
 const express  = require('express')
-const app = express()
+
+const app = express();
+
+
 
 const database = require('./config/database');
 const userRouter = require('./routes/user.route');
@@ -11,6 +14,8 @@ const listingRouter = require('./routes/listing.route');
 dotenv.config();
 // const PORT = process.env.PORT || 4000;
 database.dbconnect();
+
+const __dirname = path.resolve();
 app.use(express.json());
 app.use(cookieParser());
 
@@ -24,6 +29,11 @@ app.listen(5050,()=>{
 app.use('/api/v1/user',userRouter);
 app.use('/api/v1/auth',authRouter);
 app.use('/api/v1/listing',listingRouter);
+
+app.use(express.static(path.join(__dirname,'/client/dist')));
+
+app.get('*',(req,res)=>{res.sendFile(path.join(__dirname,'client','dist','index.html'))
+})
 
 
 app.use((err,req,res,next)=>{

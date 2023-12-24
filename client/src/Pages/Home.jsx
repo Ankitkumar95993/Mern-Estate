@@ -74,8 +74,7 @@ export default function Home() {
         </Link>
       </div>
       {/* swiper */}
-
-      <Swiper navigation>
+<Swiper navigation>
         {offerListings &&
           offerListings.length > 0 &&
           offerListings.map((listing) => (
@@ -91,6 +90,7 @@ export default function Home() {
             </SwiperSlide>
           ))}
       </Swiper>
+    
 
       {/* listing result for offer, sale and rent */}
       <div className="max-w-6xl mx-auto p-4 flex flex-col gap-8 my-10">
