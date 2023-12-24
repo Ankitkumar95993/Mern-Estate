@@ -28,15 +28,15 @@ export default function Header() {
   }, [location.search]);
 
   return (
-    <header className=" bg-slate-200 shadow-md">
+    <header className=" bg-white shadow-md  w-full z-20 ">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
         <Link to="/">
-          <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
-            <span className="text-slate-500">Vivah</span>
-            <span className="text-slate-700">Estate</span>
+          <h1 className="font-bold text-sm sm:text-2xl flex flex-wrap">
+            <span className="text-slate-500">Habitat</span>
+            <span className="text-slate-700">Hub</span>
           </h1>
         </Link>
-
+ 
         <form
           onSubmit={handleSubmit}
           className="bg-slate-100 p-3 rounded-lg flex items-center"

@@ -163,8 +163,10 @@ export default function Profile() {
   };
 
   return (
-    <div className="max-w-lg mx-auto">
-      <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
+    <div className="max-w-lg mx-auto mt-7">
+      <div>
+
+      <h1 className="text-3xl font-semibold text-center pb-7">Profile</h1>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <input
           onChange={(e) => setFile(e.target.files[0])}
@@ -287,6 +289,9 @@ export default function Profile() {
           ))}
         </div>
       )}
+
+      </div>
+      
     </div>
   );
 }

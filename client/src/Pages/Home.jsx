@@ -140,13 +140,13 @@ export default function Home() {
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-1">
               <h2 className="text-3xl text-slate-700 font-semibold">
-                Recent places for rent
+                Recent places for sale
               </h2>
               <Link
                 to={"/search?type=sale"}
                 className="text-blue-700 hover:underline"
               >
-                Show more places for rent
+                Show more places for sale
               </Link>
             </div>
             <div className="flex flex-wrap gap-4">
