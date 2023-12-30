@@ -28,9 +28,10 @@ export default function Header() {
   }, [location.search]);
 
   return (
-    <header className=" bg-white shadow-md  w-full z-20 ">
+    <header className=" bg-white shadow-md  w-full z-20  ">
       <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
-        <Link to="/">
+        <Link to="/" className="flex ">
+          <img src="https://firebasestorage.googleapis.com/v0/b/mern-estate-5602f.appspot.com/o/WhatsApp%20Image%202023-12-30%20at%2014.41.29.jpeg?alt=media&token=7dace794-64e3-4564-b7b5-8afd0b7dfdbb" className="w-10 h-10"/>
           <h1 className="font-bold text-sm sm:text-2xl flex flex-wrap">
             <span className="text-slate-500">Habitat</span>
             <span className="text-slate-700">Hub</span>
