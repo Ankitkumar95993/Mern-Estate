@@ -2,7 +2,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="max-w-6xl mx-auto p-7 bg-slate-400 flex flex-col mt-[50px] rounded-lg border-2 border-black">
+    <div className="max-w-6xl mx-auto p-7 bg-slate-400 flex flex-col mt-[50px] rounded-lg border-2 border-black ">
       <h1 className="text-3xl font-bold mt-10 p-3">About Habitat Hub</h1>
       <p className="p-3 text-xl leading-relaxed text-slate-800">
         Sahand Estate is a leading real estate agency that specializes in
